@@ -8,6 +8,7 @@ import { onAuthStateChanged } from 'firebase/auth'
 import { auth } from './firebase.config'
 import ViewBlogsPage from './Page/ViewBlogsPage'
 import ViewBlogDetails from './Page/ViewBlogDetails'
+import Navbar from './components/Navbar'
 
 function App() {
 
@@ -17,19 +18,22 @@ function App() {
     // if (user) {
     //   navigate('/dashboard');
     // } else {
-      
+
     // }
   })
 
   return (
-    <Routes>
-      <Route path='/' element={<LoginPage />} />
-      <Route path='/signup' element={<SignupPage />} />
-      <Route path='/dashboard' element={<DashboardPage />} />
-      <Route path='/view-blogs' element={<ViewBlogsPage />} />
-      <Route path='/view-blogs/:id' element={<ViewBlogDetails />} />
-      <Route path='*' element={<NotFoundPage />} />
-    </Routes>
+    <div>
+      {auth.currentUser ? <Navbar /> : null }
+      <Routes>
+        <Route path='/' element={<LoginPage />} />
+        <Route path='/signup' element={<SignupPage />} />
+        <Route path='/dashboard' element={<DashboardPage />} />
+        <Route path='/view-blogs' element={<ViewBlogsPage />} />
+        <Route path='/view-blogs/:id' element={<ViewBlogDetails />} />
+        <Route path='*' element={<NotFoundPage />} />
+      </Routes>
+    </div>
   )
 }
 

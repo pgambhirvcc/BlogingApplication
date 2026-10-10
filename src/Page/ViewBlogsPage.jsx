@@ -30,7 +30,7 @@ const ViewBlogsPage = () => {
 
     return (
         <div>
-            <Navbar />
+            {/* <Navbar /> */}
 
             <div className='flex gap-4 m-32'>
                 {

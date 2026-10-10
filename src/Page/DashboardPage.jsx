@@ -10,7 +10,7 @@ const DashboardPage = () => {
     return (
         <div>
             
-            <Navbar />
+            {/* <Navbar /> */}
             <div className="m-32">
                 <BlogForm />
             </div>

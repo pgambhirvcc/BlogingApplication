@@ -1,6 +1,6 @@
 import { signOut } from 'firebase/auth';
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase.config';
 
 const Navbar = () => {
@@ -27,6 +27,9 @@ const Navbar = () => {
             <div className="max-w-screen-xl flex justify-end p-4">
                 <div className="hidden w-full md:block md:w-auto" id="navbar-default">
                     <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-default rounded-base bg-neutral-secondary-soft md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
+                       <li>
+                            <Link to='/dashboard' type="submit" className=" text-white bg-orange-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Home</Link>
+                        </li>
                         <li>
                             <button onClick={handleViewBlogs} type="submit" className=" text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">View Blogs</button>
                         </li>
